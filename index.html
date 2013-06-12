@@ -20,21 +20,24 @@
     margin: 24px auto 32px;
   }
 
-  div {
-    column-count: 8;
-    -moz-column-count: 8;
-    -webkit-column-count: 8;
+  .container {
+    column-count: 7;
+    -moz-column-count: 7;
+    -webkit-column-count: 7;
+  }
+
+  .emoji {
+    margin: 16px auto;
   }
 
   a {
     height: 32px;
-    margin: 0 auto 16px;
     line-height: 32px;
     background-position: 0px 32px;
     background-color: transparent;
     background-image: url("emoji.png");
     background-repeat: no-repeat;
-    border: 2px solid white;
+    background-clip: 32px 32px;
     text-indent: 40px;
     display: block;
     text-decoration: none;
@@ -47,32 +50,32 @@
 
 
   @media (max-width: 1439) {
-    div {
-      column-count: 7;
-      -moz-column-count: 7;
-      -webkit-column-count: 7;
-    }
-  }
-
-
-  @media (max-width: 1279px) {
-    div {
+    .container {
       column-count: 6;
       -moz-column-count: 6;
       -webkit-column-count: 6;
     }
   }
 
-  @media (max-width: 1023px) {
-    div {
+
+  @media (max-width: 1279px) {
+    .container {
       column-count: 5;
       -moz-column-count: 5;
       -webkit-column-count: 5;
     }
   }
 
+  @media (max-width: 1023px) {
+    .container {
+      column-count: 4;
+      -moz-column-count: 4;
+      -webkit-column-count: 4;
+    }
+  }
+
   @media (max-width: 767px) {
-    div {
+    .container {
       column-count: 3;
       -moz-column-count: 3;
       -webkit-column-count: 3;
@@ -80,7 +83,7 @@
   }
 
   @media (max-width: 479px) {
-    div {
+    .container {
       column-count: 2;
       -moz-column-count: 2;
       -webkit-column-count: 2;
@@ -88,7 +91,7 @@
   }
 
   @media (max-width: 320px) {
-    div {
+    .container {
       column-count: 1;
       -moz-column-count: 1;
       -webkit-column-count: 1;
@@ -105,7 +108,7 @@
 
 <h1>GitHub Emoji</h1>
 
-<div>
+<div class='container'>
 
 </div>
 
@@ -113,14 +116,15 @@
 <script src="http:////ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <script type="text/javascript">
   $(function () {
-    var container = $("div");
+    var container = $(".container");
     $.each(names, function(i, name) {
       var imagePath = "images/" + name + ".png";
+      var wrapper = $("<div>").addClass("emoji").appendTo(container);
       $("<a>")
         .text(name)
         .css("background-position", "0px -" + (32 * i) + "px")
         .attr("href", imagePath)
-        .appendTo(container);
+        .appendTo(wrapper);
     })
   })
 
