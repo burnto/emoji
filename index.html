@@ -1,38 +1,41 @@
 <html>
 <head>
   <title>
+    Emoji Reference
   </title>
+
+  <meta name="viewport" content="width=device-width">
 
   <link rel="icon" type="image/png" href="images/tractor.png">
   <link rel="apple-touch-icon" href="images/tractor.png">
 
-
 <style type="text/css">
 
   body {
-    font-size: 11px;
+    font-size: 14px;
     font-family: sans-serif;
   }
   h1 {
-    text-align: center
+    text-align: center;
+    margin: 24px auto 32px;
   }
 
   div {
-    column-count: 9;
-    -moz-column-count: 9;
-    -webkit-column-count: 9;
+    column-count: 8;
+    -moz-column-count: 8;
+    -webkit-column-count: 8;
   }
 
   a {
-    min-width: 16px;
-    height: 16px;
-    line-height: 16px;
-    background-position: 0px 16px;
+    height: 32px;
+    margin: 0 auto 16px;
+    line-height: 32px;
+    background-position: 0px 32px;
     background-color: transparent;
     background-image: url("emoji.png");
     background-repeat: no-repeat;
     border: 2px solid white;
-    text-indent: 20px;
+    text-indent: 40px;
     display: block;
     text-decoration: none;
     color: gray;
@@ -45,18 +48,18 @@
 
   @media (max-width: 1439) {
     div {
-      column-count: 8;
-      -moz-column-count: 8;
-      -webkit-column-count: 8;
+      column-count: 7;
+      -moz-column-count: 7;
+      -webkit-column-count: 7;
     }
   }
 
 
   @media (max-width: 1279px) {
     div {
-      column-count: 7;
-      -moz-column-count: 7;
-      -webkit-column-count: 7;
+      column-count: 6;
+      -moz-column-count: 6;
+      -webkit-column-count: 6;
     }
   }
 
@@ -70,9 +73,9 @@
 
   @media (max-width: 767px) {
     div {
-      column-count: 4;
-      -moz-column-count: 4;
-      -webkit-column-count: 4;
+      column-count: 3;
+      -moz-column-count: 3;
+      -webkit-column-count: 3;
     }
   }
 
@@ -115,7 +118,7 @@
       var imagePath = "images/" + name + ".png";
       $("<a>")
         .text(name)
-        .css("background-position", "0px -" + (16 * i) + "px")
+        .css("background-position", "0px -" + (32 * i) + "px")
         .attr("href", imagePath)
         .appendTo(container);
     })
