@@ -18,7 +18,7 @@
     -webkit-column-count: 9;
   }
 
-  span {
+  a {
     min-width: 16px;
     height: 16px;
     line-height: 16px;
@@ -29,6 +29,12 @@
     border: 2px solid white;
     text-indent: 20px;
     display: block;
+    text-decoration: none;
+    color: gray;
+  }
+
+  a:hover {
+    color: black;
   }
 
 
@@ -101,9 +107,11 @@
   $(function () {
     var container = $("div");
     $.each(names, function(i, name) {
-      $("<span>")
+      var imagePath = "images/" + name + ".png";
+      $("<a>")
         .text(name)
         .css("background-position", "0px -" + (16 * i) + "px")
+        .attr("href", imagePath)
         .appendTo(container);
     })
   })
